@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+.screen{
+  display: grid;
+  grid-template-rows: 10fr 80fr 10fr;
+  grid-template-columns: 40fr 20fr 40fr;
+  width: 100vw;
+  height: 98vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.calculadora{
+  grid-column: 2;
+  grid-row: 2;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-end;
+  flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.button{
+  width:70px;
+  height:70px;
+  border-style: solid;
+  margin: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.borderBlack{
+  border-width:2px;
+  border-color:black;
+  text-align:center;
+}
+
+.display {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 10%;
+  font-size: x-large;
+  font-weight: bolder;
 }
