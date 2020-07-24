@@ -8,6 +8,7 @@ class Calc extends Component {
         super(props);
         this.state = this.initialState;
     }
+
     putValue = (value) =>{
         if (this.state.operator===1){
             this.setState({firstValue:(this.state.firstValue*10) + value})
@@ -32,7 +33,7 @@ class Calc extends Component {
         switch (this.state.operator){
             case 1: return this.state.firstValue;
             case 2: return this.state.secondValue;
-            case 3: return this.state.isSum?this.state.firstValue + this.state.secondValue:this.state.firstValue + this.state.secondValue;
+            case 3: return this.state.isSum?this.state.firstValue + this.state.secondValue:this.state.firstValue - this.state.secondValue;
             default: return 0;
         }
     }
@@ -42,20 +43,20 @@ class Calc extends Component {
         return (
             <div className={"calculadora"}>
                 <Display value={this.getValue()}/>
-                <Button display={"1"} onclick={()=>this.putValue(1)}/>
-                <Button display={"2"}  onclick={()=>this.putValue(2)}/>
-                <Button display={"3"}  onclick={()=>this.putValue(3)}/>
-                <Button display={"4"}  onclick={()=>this.putValue(4)}/>
-                <Button display={"5"}  onclick={()=>this.putValue(5)}/>
-                <Button display={"6"}  onclick={()=>this.putValue(6)}/>
-                <Button display={"7"}  onclick={()=>this.putValue(7)}/>
-                <Button display={"8"}  onclick={()=>this.putValue(8)}/>
-                <Button display={"9"}  onclick={()=>this.putValue(9)}/>
-                <Button display={"0"}  onclick={()=>this.putValue(0)}/>
-                <Button display={"+"}  onclick={()=>this.pickOperation(true)}/>
-                <Button display={"-"}  onclick={()=>this.pickOperation(false)}/>
-                <Button display={"="}  onclick={()=>this.execOperation()}/>
-                <Button display={"C"}  onclick={()=>this.clear()}/>
+                <Button display={"1"} disabled={false}  onclick={()=>this.putValue(1)}/>
+                <Button display={"2"} disabled={false} onclick={()=>this.putValue(2)}/>
+                <Button display={"3"} disabled={false} onclick={()=>this.putValue(3)}/>
+                <Button display={"4"} disabled={false} onclick={()=>this.putValue(4)}/>
+                <Button display={"5"} disabled={false} onclick={()=>this.putValue(5)}/>
+                <Button display={"6"} disabled={false} onclick={()=>this.putValue(6)}/>
+                <Button display={"7"} disabled={false} onclick={()=>this.putValue(7)}/>
+                <Button display={"8"} disabled={false} onclick={()=>this.putValue(8)}/>
+                <Button display={"9"} disabled={false} onclick={()=>this.putValue(9)}/>
+                <Button display={"0"} disabled={false} onclick={()=>this.putValue(0)}/>
+                <Button display={"+"} disabled={this.state.operator==2} onclick={()=>this.pickOperation(true)}/>
+                <Button display={"-"} disabled={this.state.operator==2} onclick={()=>this.pickOperation(false)}/>
+                <Button display={"="} disabled={this.state.operator==1} onclick={()=>this.execOperation()}/>
+                <Button display={"C"} disabled={false} onclick={()=>this.clear()}/>
             </div>
 
         );

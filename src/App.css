@@ -21,6 +21,10 @@
   margin: 5px;
 }
 
+.disabled{
+  background-color: lightgrey;
+}
+
 .borderBlack{
   border-width:2px;
   border-color:black;

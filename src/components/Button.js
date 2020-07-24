@@ -6,8 +6,9 @@ class Button extends Component {
         super(props);
     }
     render() {
+        let cssButtonClass = this.props.disabled?"button borderBlack disabled":"button borderBlack ";
         return (
-            <div className={"button borderBlack"} onClick={()=>this.props.onclick()}>
+            <div className={cssButtonClass} onClick={()=>this.props.onclick()}>
                 {this.props.display}
             </div>
         );
