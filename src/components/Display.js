@@ -3,10 +3,10 @@ import React, {Component} from 'react';
 class Display extends Component {
     render() {
         return (
-            <div className={"display borderBlack"}>
-                {this.props.value}
-            </div>
-        );
+        <div className={"display"}>
+           {this.props.value} 
+        </div>  
+        )      
     }
 }
 

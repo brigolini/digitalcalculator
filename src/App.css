@@ -1,41 +1,50 @@
-.screen{
+.screen {
+    display: grid;
+    grid-template-rows: 10fr 80fr 10fr;
+    grid-template-columns: 35fr 30fr 35fr;
+    height: 100vh;
+}
+
+.calculator {
+    grid-column: 2;
+    grid-row: 2;
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 1em;
+    max-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button {
   display: grid;
-  grid-template-rows: 10fr 80fr 10fr;
-  grid-template-columns: 40fr 20fr 40fr;
-  width: 100vw;
-  height: 98vh;
+  margin: 1em;
+  place-items: center;
+  width: 3em;
+  height: 3em;
+  border: 1px solid black;  
+  background-color: brown;
+  color: white;
+  cursor: pointer;
 }
 
-.calculadora{
-  grid-column: 2;
-  grid-row: 2;
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-}
-
-.button{
-  width:70px;
-  height:70px;
-  border-style: solid;
-  margin: 5px;
-}
-
-.disabled{
-  background-color: lightgrey;
-}
-
-.borderBlack{
-  border-width:2px;
-  border-color:black;
-  text-align:center;
+.buttonsConteiner {
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: burlywood;
 }
 
 .display {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  height: 10%;
-  font-size: x-large;
-  font-weight: bolder;
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid black;
+    background-color: violet;
+    color: white;
+}
+
+.disabled {
+    background-color: gainsboro;
 }

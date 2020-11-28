@@ -1,18 +1,21 @@
 import React, {Component} from 'react';
-import '../App.css';
 
-class Button extends Component {
-    constructor(props) {
-        super(props);
+export class Button extends Component {
+
+    
+    handleClick () {
+        const {disabled,onClick} = this.props;
+
+        if ((onClick)&&(!disabled))
+           this.props.onClick();
     }
+
     render() {
-        let cssButtonClass = this.props.disabled?"button borderBlack disabled":"button borderBlack ";
+        const cssButtonClass = this.props.disabled?"button disabled":"button";
         return (
-            <div className={cssButtonClass} onClick={()=>this.props.onclick()}>
-                {this.props.display}
-            </div>
-        );
+        <div className={cssButtonClass} onClick={this.handleClick.bind(this)}>
+            {this.props.display}
+        </div>
+        )
     }
 }
-
-export default Button;
